@@ -1,0 +1,68 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStructures", "DataStructures\DataStructures.csproj", "{82569E11-EEA7-4C54-88F8-B0DA5EBCAF84}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataStructures.Tests", "DataStructuresTests\DataStructures.Tests.csproj", "{FCB5E2ED-6390-4E92-BB49-CFF9B144B694}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Course 2 - Data Structures", "Course 2 - Data Structures", "{34BC3D6D-03FC-4F38-B530-A8C1F012EEC0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Course 1 - Algorithmic Toolbox", "Course 1 - Algorithmic Toolbox", "{36B37AA4-6DCE-461B-A0FA-5547B0E7FEF0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Course 3 - Algorithms on Graphs", "Course 3 - Algorithms on Graphs", "{43F97B04-3A3D-4108-8ED0-36CBDF2036A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlgorithmsOnGraphs", "AlgorithmsOnGraphs\AlgorithmsOnGraphs.csproj", "{EFD790FA-B7C2-4949-BE88-7F2C19C2F917}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlgorithmsOnGraphs.Tests", "AlgorithmsOnGraphs.Tests\AlgorithmsOnGraphs.Tests.csproj", "{28965A3C-3442-411A-BD53-BCD2D1E777B1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Course 4 - Algorithms on Strings", "Course 4 - Algorithms on Strings", "{240398E9-E6AB-4770-8FB1-126AB8F6B0F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlgorithmsOnStrings", "AlgorithmsOnStrings\AlgorithmsOnStrings.csproj", "{944A2D23-92BC-433E-83E5-9EC6F6501E7A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AlgorithmsOnStrings.Tests", "AlgorithmsOnStrings.Tests\AlgorithmsOnStrings.Tests.csproj", "{5DCE9A7D-2AF4-4813-B0C2-CC04EE10400E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{82569E11-EEA7-4C54-88F8-B0DA5EBCAF84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{82569E11-EEA7-4C54-88F8-B0DA5EBCAF84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{82569E11-EEA7-4C54-88F8-B0DA5EBCAF84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{82569E11-EEA7-4C54-88F8-B0DA5EBCAF84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCB5E2ED-6390-4E92-BB49-CFF9B144B694}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCB5E2ED-6390-4E92-BB49-CFF9B144B694}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCB5E2ED-6390-4E92-BB49-CFF9B144B694}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCB5E2ED-6390-4E92-BB49-CFF9B144B694}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFD790FA-B7C2-4949-BE88-7F2C19C2F917}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFD790FA-B7C2-4949-BE88-7F2C19C2F917}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFD790FA-B7C2-4949-BE88-7F2C19C2F917}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFD790FA-B7C2-4949-BE88-7F2C19C2F917}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28965A3C-3442-411A-BD53-BCD2D1E777B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28965A3C-3442-411A-BD53-BCD2D1E777B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28965A3C-3442-411A-BD53-BCD2D1E777B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28965A3C-3442-411A-BD53-BCD2D1E777B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{944A2D23-92BC-433E-83E5-9EC6F6501E7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{944A2D23-92BC-433E-83E5-9EC6F6501E7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{944A2D23-92BC-433E-83E5-9EC6F6501E7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{944A2D23-92BC-433E-83E5-9EC6F6501E7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DCE9A7D-2AF4-4813-B0C2-CC04EE10400E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DCE9A7D-2AF4-4813-B0C2-CC04EE10400E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DCE9A7D-2AF4-4813-B0C2-CC04EE10400E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DCE9A7D-2AF4-4813-B0C2-CC04EE10400E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{82569E11-EEA7-4C54-88F8-B0DA5EBCAF84} = {34BC3D6D-03FC-4F38-B530-A8C1F012EEC0}
+		{FCB5E2ED-6390-4E92-BB49-CFF9B144B694} = {34BC3D6D-03FC-4F38-B530-A8C1F012EEC0}
+		{EFD790FA-B7C2-4949-BE88-7F2C19C2F917} = {43F97B04-3A3D-4108-8ED0-36CBDF2036A8}
+		{28965A3C-3442-411A-BD53-BCD2D1E777B1} = {43F97B04-3A3D-4108-8ED0-36CBDF2036A8}
+		{944A2D23-92BC-433E-83E5-9EC6F6501E7A} = {240398E9-E6AB-4770-8FB1-126AB8F6B0F2}
+		{5DCE9A7D-2AF4-4813-B0C2-CC04EE10400E} = {240398E9-E6AB-4770-8FB1-126AB8F6B0F2}
+	EndGlobalSection
+EndGlobal

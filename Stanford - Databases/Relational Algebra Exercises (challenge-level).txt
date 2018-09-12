@@ -1,0 +1,138 @@
+Relational Algebra Exercises (challenge-level)
+
+These problems are more challenging than those in the core set. Try them out to test your skills (and perhaps earn a Statement of Accomplishment with Distinction). 
+
+In this assignment you are to write relational algebra queries over a small database, executed using our RA Workbench. Behind the scenes, the RA workbench translates relational algebra expressions into SQL queries over the database stored in SQLite. Since relational algebra symbols aren't readily available on most keyboards, RA uses a special syntax described in our RA Relational Algebra Syntax guide. 
+
+We've created a small sample database to use for this assignment. It contains four relations:
+    Person(name, age, gender)       // name is a key
+    Frequents(name, pizzeria)       // [name,pizzeria] is a key
+    Eats(name, pizza)               // [name,pizza] is a key
+    Serves(pizzeria, pizza, price)  // [pizzeria,pizza] is a key
+View the database. (You can also download the schema and data.) 
+
+Instructions: You are to write relational algebra expressions over the pizza database. We strongly suggest that you work the queries out on paper first, using conventional relational algebra symbols. When you click "Check Answer" our back-end runs your query against the sample database. It displays the result and compares your answer against the correct one. When you're satisfied with your solution for a given problem, click the "Save Answers" button to save your progress. Click "Submit Answers" to submit the entire exercise set. 
+
+Please Note: You are to translate the English into an expression that computes the desired result over all possible databases. All we actually check is that your query gets the right answer on the small sample database. Thus, even if your solution is marked as correct, it is possible that your query does not correctly reflect the problem at hand. (For example, if we ask for a complex condition that requires accessing all of the tables, but over our small data set in the end the condition is satisfied only by Amy, then the query "\project_{name} (\select_{name='Amy'} Person)" will be marked correct even though it doesn't reflect the actual question.) Circumventing the system in this fashion will get you a high score on the exercises, but it won't help you learn relational algebra. On the other hand, an incorrect attempt at a general solution is unlikely to produce the right answer, so you shouldn't be led astray by our checking system. 
+
+You may perform these exercises as many times as you like, so we strongly encourage you to keep working with them until you complete the exercises with full credit. 
+
+Question 1
+
+Find all pizzas that are eaten only by people younger than 24, or that cost less than $10 everywhere they're served.
+
+((\project_{pizza} (\select_{age<24} Person \join Eats))
+ \diff (\project_{pizza} (\select_{age>=24} Person \join Eats)))
+ \union 
+((\project_{pizza} \select_{price<10} Serves) \diff (\project_{pizza} \select_{price>=10} Serves))
+
+Question 2
+
+Find the age of the oldest person (or people) who eat mushroom pizza.
+
+(\project_{age} (Person \join (\select_{pizza='mushroom'} Eats)))
+ \diff  
+(\project_{one} \select_{one < two} (\rename_{one,two} 
+ ((\project_{age} (Person \join (\select_{pizza='mushroom'} Eats)))
+  \cross 
+
+  Question 3
+
+Find all pizzerias that serve only pizzas eaten by people over 30.
+
+(\project_{pizzeria} (Serves \join ((\select_{age > 30} Person) \join Eats)))
+ \diff 
+(\project_{pizzeria} (Serves \join ((\project_{pizza} Serves) \diff (\project_{pizza} ((\select_{age > 30} Person) \join Eats)))))
+
+
+Question 4
+
+Find all pizzerias that serve every pizza eaten by people over 30.
+
+\project_{pz1}(\select_{pz1=pz2 and p1<>p2 and p1<p2}(\rename_{pz1,p1,pz2,p2}(
+(\project_{pizzeria,pizza} (Serves \join ((\select_{age > 30} Person) \join Eats)))
+ \cross 
+(\project_{pizzeria,pizza} (Serves \join ((\select_{age > 30} Person) \join Eats)))
+)))
+
+DATABASE
+
+Person
+name	age	gender
+Amy	16	female
+Ben	21	male
+Cal	33	male
+Dan	13	male
+Eli	45	male
+Fay	21	female
+Gus	24	male
+Hil	30	female
+Ian	18	male
+
+Frequents
+name	pizzeria
+Amy	Pizza Hut
+Ben	Chicago Pizza
+Ben	Pizza Hut
+Cal	New York Pizza
+Cal	Straw Hat
+Dan	New York Pizza
+Dan	Straw Hat
+Eli	Chicago Pizza
+Eli	Straw Hat
+Fay	Dominos
+Fay	Little Caesars
+Gus	Chicago Pizza
+Gus	Pizza Hut
+Hil	Dominos
+Hil	Pizza Hut
+Hil	Straw Hat
+Ian	Dominos
+Ian	New York Pizza
+Ian	Straw Hat
+
+Eats
+name	pizza
+Amy	mushroom
+Amy	pepperoni
+Ben	cheese
+Ben	pepperoni
+Cal	supreme
+Dan	cheese
+Dan	mushroom
+Dan	pepperoni
+Dan	sausage
+Dan	supreme
+Eli	cheese
+Eli	supreme
+Fay	mushroom
+Gus	cheese
+Gus	mushroom
+Gus	supreme
+Hil	cheese
+Hil	supreme
+Ian	pepperoni
+Ian	supreme
+
+Serves
+pizzeria	pizza	price
+Chicago Pizza	cheese	7.75
+Chicago Pizza	supreme	8.5
+Dominos	cheese	9.75
+Dominos	mushroom	11
+Little Caesars	cheese	7
+Little Caesars	mushroom	9.25
+Little Caesars	pepperoni	9.75
+Little Caesars	sausage	9.5
+New York Pizza	cheese	7
+New York Pizza	pepperoni	8
+New York Pizza	supreme	8.5
+Pizza Hut	cheese	9
+Pizza Hut	pepperoni	12
+Pizza Hut	sausage	12
+Pizza Hut	supreme	12
+Straw Hat	cheese	9.25
+Straw Hat	pepperoni	8
+Straw Hat	sausage	9.75
+
+

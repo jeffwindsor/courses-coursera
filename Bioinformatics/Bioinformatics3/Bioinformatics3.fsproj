@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>43557af6-19e4-4e31-bb30-9a17c1d12103</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Bioinformatics3</RootNamespace>
+    <AssemblyName>Bioinformatics3</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFSharpCoreVersion>4.4.0.0</TargetFSharpCoreVersion>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Name>Bioinformatics3</Name>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <Tailcalls>false</Tailcalls>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <WarningLevel>3</WarningLevel>
+    <DocumentationFile>bin\Debug\Bioinformatics3.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <Tailcalls>true</Tailcalls>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <WarningLevel>3</WarningLevel>
+    <DocumentationFile>bin\Release\Bioinformatics3.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
+  </PropertyGroup>
+  <Choose>
+    <When Condition="'$(VisualStudioVersion)' == '11.0'">
+      <PropertyGroup Condition="Exists('$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.0\Framework\v4.0\Microsoft.FSharp.Targets')">
+        <FSharpTargetsPath>$(MSBuildExtensionsPath32)\..\Microsoft SDKs\F#\3.0\Framework\v4.0\Microsoft.FSharp.Targets</FSharpTargetsPath>
+      </PropertyGroup>
+    </When>
+    <Otherwise>
+      <PropertyGroup Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\FSharp\Microsoft.FSharp.Targets')">
+        <FSharpTargetsPath>$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\FSharp\Microsoft.FSharp.Targets</FSharpTargetsPath>
+      </PropertyGroup>
+    </Otherwise>
+  </Choose>
+  <Import Project="$(FSharpTargetsPath)" />
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.fs" />
+    <Compile Include="Files.fs" />
+    <None Include="BA5A Find the Minimum Number of Coins Needed to Make Change.fsx" />
+    <None Include="BA5B Find the Length of a Longest Path in a Manhattan-like Grid.fsx" />
+    <None Include="BA5C Find a Longest Common Subsequence of Two Strings.fsx" />
+    <None Include="BA5D Find the Longest Path in a DAG.fsx" />
+    <Compile Include="SequenceAlignments.fs" />
+    <Compile Include="MatrixFiles.fs" />
+    <None Include="BA5E Find a Highest-Scoring Alignment of Two Strings.fsx" />
+    <None Include="BA5F Find a Highest-Scoring Local Alignment of Two Strings.fsx" />
+    <None Include="BA5G Compute the Edit Distance Between Two Strings.fsx" />
+    <None Include="BA5H Find a Highest-Scoring Fitting Alignment of Two Strings.fsx" />
+    <None Include="BA5I Find a Highest-Scoring Overlap Alignment of Two Strings.fsx" />
+    <None Include="BA5J Align Two Strings Using Affine Gap Penalties.fsx" />
+    <Compile Include="LinearSpaceAlignments.fs" />
+    <None Include="BA5K Find a Middle Edge in an Alignment Graph in Linear Space.fsx" />
+    <None Include="BA5L Align Two Strings Using Linear Space.fsx" />
+    <None Include="BA5M Find a Highest-Scoring Multiple Sequence Alignment.fsx" />
+    <None Include="BA5N Find a Topological Ordering of a DAG.fsx" />
+    <Compile Include="CircularChromosomes.fs" />
+    <None Include="CircularChromosomes-Tests.fsx" />
+    <None Include="BA6A Implement GreedySorting to Sort a Permutation by Reversals.fsx" />
+    <None Include="BA6B Compute the Number of Breakpoints in a Permutation.fsx" />
+    <None Include="BA6C Compute the 2-Break Distance Between a Pair of Genomes.fsx" />
+    <None Include="BA6D Find a Shortest Transformation of One Genome into Another by 2-Breaks.fsx" />
+    <None Include="BA6E Find All Shared k-mers of a Pair of Strings.fsx" />
+    <None Include="BA6F Implement ChromosomeToCycle.fsx" />
+    <None Include="BA6G Implement CycleToChromosome.fsx" />
+    <None Include="BA6H Implement ColoredEdges.fsx" />
+    <None Include="BA6I Implement GraphToGenome.fsx" />
+    <None Include="BA6J Implement 2-BreakOnGenomeGraph.fsx" />
+    <None Include="BA6K Implement 2-BreakOnGenome.fsx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="mscorlib" />
+    <Reference Include="FSharp.Core, Version=$(TargetFSharpCoreVersion), Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+  </ItemGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
